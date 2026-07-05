@@ -1,0 +1,38 @@
+export const PROJECTS = [
+  {
+    n: "01",
+    title: "Startup & Investor Platform",
+    year: "2025",
+    tag: "SaaS / Fintech",
+    desc: "Investor-focused web application with a scalable React UI, Supabase auth, and real-time data flows connecting founders with capital.",
+    stack: ["React.js", "Supabase", "MySQL"],
+    href: "https://github.com/XHassan2003",
+  },
+  {
+    n: "02",
+    title: "Interactive Web Suite",
+    year: "2026",
+    tag: "Frontend / REST",
+    desc: "Responsive component library and dashboards built at Internee.pk — reusable React modules, REST integrations, and state management.",
+    stack: ["React.js", "JavaScript", "REST"],
+    href: "https://github.com/XHassan2003",
+  },
+  {
+    n: "03",
+    title: "ML Regression Playground",
+    year: "2025",
+    tag: "AI / ML",
+    desc: "Coursework project exploring supervised learning — regression and classification models with clean notebooks and visual analysis.",
+    stack: ["Python", "Jupyter", "scikit-learn"],
+    href: "https://github.com/XHassan2003",
+  },
+  {
+    n: "04",
+    title: "MERN Coursework Apps",
+    year: "2024",
+    tag: "Full Stack",
+    desc: "A collection of full-stack apps built through university internet programming coursework — auth, CRUD, and MongoDB-backed APIs.",
+    stack: ["MongoDB", "Express", "React", "Node"],
+    href: "https://github.com/XHassan2003",
+  },
+];
