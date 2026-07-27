@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { FaGithub} from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { PROJECTS } from "../data/projects";
 import {
@@ -45,17 +45,17 @@ export default function Work() {
             className="group rounded-2xl border border-foreground/10 overflow-hidden hover:border-accent/40 transition-colors"
           >
             <a href={p.href} target="_blank" rel="noreferrer" className="block">
-              <div className="aspect-[16/10] w-full overflow-hidden bg-secondary/60">
+              <div className="w-full overflow-hidden bg-secondary/60 flex items-center justify-center p-3">
                 {p.image ? (
                   <motion.img
                     src={p.image}
                     alt={`${p.title} preview`}
-                    className="h-full w-full object-cover"
-                    whileHover={{ scale: 1.05 }}
+                    className="w-full h-auto rounded-lg"
+                    whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
                   />
                 ) : (
-                  <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-secondary to-accent/10">
+                  <div className="w-full aspect-[16/10] flex items-center justify-center bg-gradient-to-br from-secondary to-accent/10 rounded-lg">
                     <span className="font-display text-3xl text-foreground/30">
                       {p.title}
                     </span>
@@ -81,6 +81,7 @@ export default function Work() {
                 </div>
 
                 <div className="flex items-center gap-2 shrink-0">
+                  {/* GitHub */}
                   <a
                     href={p.repo}
                     target="_blank"
@@ -91,6 +92,7 @@ export default function Work() {
                     <FaGithub className="h-4 w-4" />
                   </a>
 
+                  {/* Live Demo */}
                   <a
                     href={p.href}
                     target="_blank"
