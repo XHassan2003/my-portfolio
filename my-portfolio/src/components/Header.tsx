@@ -13,11 +13,12 @@ export default function Header() {
           minute: "2-digit",
           hour12: false,
           timeZone: "Asia/Karachi",
-        }),
+        })
       );
     };
+
     tick();
-    const id = setInterval(tick, 30_000);
+    const id = setInterval(tick, 30000);
     return () => clearInterval(id);
   }, []);
 
@@ -28,21 +29,58 @@ export default function Header() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="mx-auto max-w-6xl px-6 md:px-10 pt-8 flex items-center justify-between text-xs uppercase tracking-[0.18em]"
     >
-      <span className="font-mono">HA — 2026</span>
+      {/* Logo */}
+      <a href="#" className="font-mono hover:text-accent transition-colors">
+        Hassan Ansari
+      </a>
+
+      {/* Navigation */}
       <nav className="hidden md:flex items-center gap-8">
-        <a href="#work" className="hover:text-accent transition-colors">Work</a>
-        <a href="#experience" className="hover:text-accent transition-colors">Experience</a>
-        <a href="#about" className="hover:text-accent transition-colors">About</a>
-        <a href="#contact" className="hover:text-accent transition-colors">Contact</a>
+        <a
+          href="#work"
+          className="hover:text-accent transition-colors"
+        >
+          Work
+        </a>
+
+        <a
+          href="#experience"
+          className="hover:text-accent transition-colors"
+        >
+          Experience
+        </a>
+
+        <a
+          href="#about"
+          className="hover:text-accent transition-colors"
+        >
+          About
+        </a>
+
+        <a
+          href="#contact"
+          className="hover:text-accent transition-colors"
+        >
+          Contact
+        </a>
       </nav>
-      <span className="font-mono text-muted-foreground">
+
+      {/* Availability */}
+      <a
+        href="#contact"
+        className="font-mono text-muted-foreground hover:text-accent transition-colors"
+      >
         <motion.span
           className="inline-block h-1.5 w-1.5 rounded-full bg-accent mr-2 align-middle"
           animate={{ opacity: [1, 0.3, 1] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
         />
-        Karachi · {time}
-      </span>
+        Available for work · {time}
+      </a>
     </motion.header>
   );
 }

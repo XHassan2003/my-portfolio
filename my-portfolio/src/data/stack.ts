@@ -1,14 +1,14 @@
 export const STACK = [
-  "Python",
+  "C#",
   "JavaScript",
-  "Java",
   "React.js",
   "Node.js",
+  "TypeScript",
+  "Express.js",
   "MongoDB",
+  "Next.js",
   "MySQL",
   "Supabase",
   "Tailwind CSS",
-  "HTML5",
   "Git",
-  "Linux",
 ];
