@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Copy, Mail } from "lucide-react";
+import { Copy, Mail, Download } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeUp, staggerContainer, staggerItem, viewport } from "../lib/motion";
@@ -24,7 +24,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="mx-auto max-w-6xl px-6 md:px-10 py-24 md:py-40"
+      className="mx-auto max-w-6xl px-6 md:px-10 py-16 sm:py-24 md:py-40"
     >
       <motion.p
         initial="hidden"
@@ -42,7 +42,7 @@ const Contact = () => {
         viewport={viewport}
         variants={fadeUp}
         transition={{ delay: 0.1 }}
-        className="mt-6 font-display text-6xl md:text-[10vw] leading-[0.95] tracking-tight"
+        className="mt-6 font-display text-5xl sm:text-6xl md:text-[10vw] leading-[0.95] tracking-tight break-words"
       >
         Let's build
         <br />
@@ -54,7 +54,7 @@ const Contact = () => {
         whileInView="show"
         viewport={viewport}
         variants={staggerContainer}
-        className="mt-14 grid md:grid-cols-2 gap-10 items-end"
+        className="mt-10 sm:mt-14 grid md:grid-cols-2 gap-8 sm:gap-10 items-start md:items-end"
       >
         <motion.div variants={staggerItem}>
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
@@ -65,10 +65,10 @@ const Contact = () => {
             onClick={copyEmail}
             whileHover={{ x: 4 }}
             transition={{ duration: 0.2 }}
-            className="group inline-flex items-center gap-3 font-display text-2xl md:text-4xl hover:text-accent transition-colors break-all text-left"
+            className="group inline-flex items-center gap-3 font-display text-xl sm:text-2xl md:text-4xl hover:text-accent transition-colors break-all text-left"
           >
             {EMAIL}
-            <Copy className="h-5 w-5 opacity-40 group-hover:opacity-100 shrink-0" />
+            <Copy className="h-4 w-4 sm:h-5 sm:w-5 opacity-40 group-hover:opacity-100 shrink-0" />
           </motion.button>
 
           <AnimatePresence>
@@ -92,13 +92,13 @@ const Contact = () => {
 
         <motion.div
           variants={staggerItem}
-          className="flex md:justify-end gap-3 flex-wrap"
+          className="flex flex-wrap md:justify-end gap-3"
         >
           <motion.a
             href={`mailto:${EMAIL}`}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-6 py-3 text-sm font-medium hover:bg-accent transition-colors"
+            className="flex-1 sm:flex-none min-w-[calc(50%-6px)] sm:min-w-0 inline-flex items-center justify-center gap-2 rounded-full bg-foreground text-background px-6 py-3 text-sm font-medium hover:bg-accent transition-colors"
           >
             <Mail className="h-4 w-4" />
             Email me
@@ -110,7 +110,7 @@ const Contact = () => {
             rel="noreferrer"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm font-medium hover:border-foreground transition-colors"
+            className="flex-1 sm:flex-none min-w-[calc(50%-6px)] sm:min-w-0 inline-flex items-center justify-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm font-medium hover:border-foreground transition-colors"
           >
             <FaGithub className="h-4 w-4" />
             GitHub
@@ -122,12 +122,22 @@ const Contact = () => {
             rel="noreferrer"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm font-medium hover:border-foreground transition-colors"
+            className="flex-1 sm:flex-none min-w-[calc(50%-6px)] sm:min-w-0 inline-flex items-center justify-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm font-medium hover:border-foreground transition-colors"
           >
             <FaLinkedin className="h-4 w-4" />
             LinkedIn
           </motion.a>
-          
+
+          <motion.a
+            href="/resume.pdf"
+            download="Hassan_Ansari_Resume.pdf"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            className="flex-1 sm:flex-none min-w-[calc(50%-6px)] sm:min-w-0 inline-flex items-center justify-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm font-medium hover:border-foreground transition-colors"
+          >
+            <Download className="h-4 w-4" />
+            Resume
+          </motion.a>
         </motion.div>
       </motion.div>
     </section>
